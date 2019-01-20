@@ -273,7 +273,7 @@ Prefab:
     - target: {fileID: 114160889968000614, guid: bd6b520ae512fe14284192c59b70f0f3,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114569288820653972, guid: bd6b520ae512fe14284192c59b70f0f3,
         type: 2}
@@ -289,6 +289,10 @@ Prefab:
       propertyPath: target
       value: 
       objectReference: {fileID: 76490650}
+    - target: {fileID: 11437508, guid: bd6b520ae512fe14284192c59b70f0f3, type: 2}
+      propertyPath: killStrokes
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd6b520ae512fe14284192c59b70f0f3, type: 2}
   m_IsPrefabAsset: 0
@@ -371,7 +375,7 @@ MonoBehaviour:
     e31: 0
     e32: 0
     e33: 0
-  checkSelfDestruct: 0
+  checkSelfDestruct: 1
 --- !u!4 &928870517
 Transform:
   m_ObjectHideFlags: 0
@@ -460,7 +464,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1996632172}
   - component: {fileID: 1996632171}
-  - component: {fileID: 1996632173}
   m_Layer: 0
   m_Name: OSC
   m_TagString: Untagged
@@ -474,11 +477,13 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1996632170}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b3efe2294911d4d4ab28fc0392e5baf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  latk: {fileID: 853635438}
+  latkd: {fileID: 928870516}
   oscMode: 1
   msgMode: 0
   outIP: 127.0.0.1
@@ -497,21 +502,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1996632173
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1996632170}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 456a76aea0ef696439c1c1686b30dc2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  latk: {fileID: 853635438}
-  scaler: 10
-  oscMode: 1
-  msgMode: 0
-  outIP: 127.0.0.1
-  outPort: 9999
-  inPort: 7110

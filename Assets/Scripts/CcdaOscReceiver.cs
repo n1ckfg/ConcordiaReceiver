@@ -29,10 +29,12 @@ using UnityOSC;
 
 public class CcdaOscReceiver : MonoBehaviour {
 
+    public LightningArtist latk;
+    public LatkDrawing latkd;
 	public enum OscMode { SEND, RECEIVE, SEND_RECEIVE };
 	public OscMode oscMode = OscMode.RECEIVE;
 	public enum MsgMode { P5, OF };
-	public MsgMode msgMode = MsgMode.OF;
+	public MsgMode msgMode = MsgMode.P5;
 	public string outIP = "127.0.0.1";
     public int outPort = 9999;
     public int inPort = 9998;
@@ -90,12 +92,18 @@ public class CcdaOscReceiver : MonoBehaviour {
 			return;
 		}
 
-		float x = 0f;
+		//float x = 0f;
 
 		switch (msgMode) {
 			case (MsgMode.P5):
-				//x = (float) pckt.Data[0];
-				Debug.Log(pckt.Data[0]);
+                //x = (float) pckt.Data[0];
+                List<Vector3> points = new List<Vector3>();
+                for (int i = 0; i < pckt.Data.Count; i+=3) {
+                    Vector3 pos = new Vector3((float)pckt.Data[i], (float)pckt.Data[i+1], (float)pckt.Data[i+2]);
+                    points.Add(pos);
+                }
+                latk.inputInstantiateStroke(latk.mainColor, points);
+                Debug.Log(pckt.Data[0]);
 				break;
 			case (MsgMode.OF):
 				OSCMessage msg = pckt.Data[0] as UnityOSC.OSCMessage;
