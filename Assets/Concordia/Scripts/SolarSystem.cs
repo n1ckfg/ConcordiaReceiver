@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class SolarSystem : MonoBehaviour {
 
+    public float spread = 0.1f;
+    public int numNewPoints = 3;
+
     private void OnEnable()
     {
         //ConcordiaOSCReceiver.OnReceive += Receive;
@@ -50,10 +53,24 @@ public class SolarSystem : MonoBehaviour {
                 currentLineIndex = 0;
             }
             line.useWorldSpace = false;
-            line.positionCount = 2;
+            line.positionCount = numNewPoints + 2;
             Vector3[] positions = positionsQueue.Dequeue();
-            line.SetPosition(0, positions[0]);
-            line.SetPosition(1, positions[1]);
+
+            float x1 = positions[0].x + Random.Range(-spread, spread);
+            float y1 = positions[0].y + Random.Range(-spread, spread);
+            float z1 = positions[0].z + Random.Range(-spread, spread);
+            float x2 = positions[1].x + Random.Range(-spread, spread);
+            float y2 = positions[1].y + Random.Range(-spread, spread);
+            float z2 = positions[1].z + Random.Range(-spread, spread);
+            Vector3 startPoint = new Vector3(x1, y1, z1);
+            Vector3 endPoint = new Vector3(x2, y2, z2);
+
+            line.SetPosition(0, startPoint); // positions[0]);
+            for (int i=0; i<numNewPoints; i++) {
+                float progress = (float) (i+1) / (float) numNewPoints;
+                line.SetPosition(i+1, Vector3.Lerp(startPoint, endPoint, progress));
+            }
+            line.SetPosition(numNewPoints+1, endPoint);
             //line.GetComponent<AlignCapsule>().Align(positions[0], positions[1]);
 
         }
