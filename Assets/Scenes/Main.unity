@@ -201,7 +201,7 @@ Camera:
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
-  m_AllowMSAA: 1
+  m_AllowMSAA: 0
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
@@ -535,7 +535,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22abe87e865656d4facfeb7c01761f56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 1
+  delay: 0.1
   coordinates: {fileID: 4900000, guid: 1bbf24503613dc64f8106abbf795572f, type: 3}
 --- !u!114 &1751645961
 MonoBehaviour:

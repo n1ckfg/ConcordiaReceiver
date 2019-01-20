@@ -54,7 +54,7 @@ public class SolarSystem : MonoBehaviour {
             Vector3[] positions = positionsQueue.Dequeue();
             line.SetPosition(0, positions[0]);
             line.SetPosition(1, positions[1]);
-            line.GetComponent<AlignCapsule>().Align(positions[0], positions[1]);
+            //line.GetComponent<AlignCapsule>().Align(positions[0], positions[1]);
 
         }
     }
