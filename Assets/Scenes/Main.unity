@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 994625062}
-  m_IndirectSpecularColor: {r: 0.04929086, g: 0.046791866, b: 0.046852358, a: 1}
+  m_IndirectSpecularColor: {r: 0.0027402109, g: 0.0024537237, b: 0.0023698038, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -152,6 +152,7 @@ GameObject:
   - component: {fileID: 593927744}
   - component: {fileID: 593927743}
   - component: {fileID: 593927746}
+  - component: {fileID: 593927747}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -231,6 +232,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   profile: {fileID: 11400000, guid: 163f22c5ac0712c419aa44d32ddc7289, type: 2}
+--- !u!114 &593927747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 593927742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 305c52c1c93cec5468ad495ec29726f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useKeyboard: 1
+  useYAxis: 0
+  yAxisName: Vertical2
+  walkSpeed: 10
+  runSpeed: 100
+  accel: 0.01
+  homePoint: {fileID: 0}
+  useMouse: 1
+  showCursor: 0
+  useButton: 1
+  axes: 0
+  sensitivityX: 2
+  sensitivityY: 2
+  mousePos: {x: 0, y: 0, z: 0}
+  clicked: 0
+  isDrawing: 0
+  useRaycaster: 1
+  followMouse: 1
+  debugRaycaster: 0
+  isLooking: 0
+  isLookingAt: 
+  lastHitPos: {x: 1, y: 1, z: 1}
+  useCollisions: 0
 --- !u!1001 &853635436
 Prefab:
   m_ObjectHideFlags: 0
@@ -273,7 +308,7 @@ Prefab:
     - target: {fileID: 114160889968000614, guid: bd6b520ae512fe14284192c59b70f0f3,
         type: 2}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114569288820653972, guid: bd6b520ae512fe14284192c59b70f0f3,
         type: 2}
@@ -292,6 +327,10 @@ Prefab:
     - target: {fileID: 11437508, guid: bd6b520ae512fe14284192c59b70f0f3, type: 2}
       propertyPath: killStrokes
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11437508, guid: bd6b520ae512fe14284192c59b70f0f3, type: 2}
+      propertyPath: brushMode
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd6b520ae512fe14284192c59b70f0f3, type: 2}
@@ -455,6 +494,65 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &1751645958
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1751645959}
+  - component: {fileID: 1751645960}
+  - component: {fileID: 1751645961}
+  m_Layer: 0
+  m_Name: CONCORDIA
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1751645959
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1751645958}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1751645960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1751645958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22abe87e865656d4facfeb7c01761f56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 1
+  coordinates: {fileID: 4900000, guid: 1bbf24503613dc64f8106abbf795572f, type: 3}
+--- !u!114 &1751645961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1751645958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2505375b12996f444b862f0948d9be54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lines: []
+  numLines: 100
+  linePrefab: {fileID: 120829236415973794, guid: 2b2fc98fc675ed8489922ac547222ce9,
+    type: 2}
+  lineParent: {fileID: 1751645958}
 --- !u!1 &1996632170
 GameObject:
   m_ObjectHideFlags: 0
@@ -470,7 +568,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1996632171
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -488,7 +586,7 @@ MonoBehaviour:
   msgMode: 0
   outIP: 127.0.0.1
   outPort: 9999
-  inPort: 9998
+  inPort: 6967
 --- !u!4 &1996632172
 Transform:
   m_ObjectHideFlags: 0
