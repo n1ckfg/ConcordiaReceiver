@@ -346,7 +346,8 @@ MonoBehaviour:
   latk: {fileID: 853635438}
   brushPrefab: {fileID: 11487128, guid: beb8a1e04a58a4494ae8870cdc802e88, type: 2}
   brushMode: 0
-  brushMat: []
+  brushMat:
+  - {fileID: 2100000, guid: 7ff5f226683f27a4f8e5be4f5a466cba, type: 2}
   color: {r: 1, g: 0, b: 0, a: 1}
   brushSize: 0.05
   minDistance: 0
@@ -459,6 +460,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1996632172}
   - component: {fileID: 1996632171}
+  - component: {fileID: 1996632173}
   m_Layer: 0
   m_Name: OSC
   m_TagString: Untagged
@@ -472,7 +474,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1996632170}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b3efe2294911d4d4ab28fc0392e5baf3, type: 3}
   m_Name: 
@@ -495,3 +497,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1996632173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1996632170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 456a76aea0ef696439c1c1686b30dc2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  latk: {fileID: 853635438}
+  scaler: 10
+  oscMode: 1
+  msgMode: 0
+  outIP: 127.0.0.1
+  outPort: 9999
+  inPort: 7110
